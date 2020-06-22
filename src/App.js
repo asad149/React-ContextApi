@@ -7,15 +7,10 @@ import CounterContext from "./CounterContext";
 function App() {
   let count = useState(0);
 
-  let [isMorning, setMorning] = useState(true);
-
   return (
     <CounterContext.Provider value={count}>
-      <div className={`App ${isMorning ? "dayLight" : "dayNight"}`}>
-        <h1>Good {isMorning ? "Morning" : "Night"}</h1>
+      <div className="App">
         <Parent />
-
-        <button onClick={() => setMorning(!isMorning)}>Update Day</button>
       </div>
     </CounterContext.Provider>
   );
